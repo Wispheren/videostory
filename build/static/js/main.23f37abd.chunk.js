@@ -1,0 +1,2 @@
+(this.webpackJsonpvideostory=this.webpackJsonpvideostory||[]).push([[0],[function(e,t,o){e.exports=o(1)},function(e,t,o){"use strict";o.r(t);o(2);var n=document.getElementById("root"),i=document.createElement("div");i.appendChild(document.createTextNode("Jubii 3")),n.appendChild(i)},function(e,t,o){}],[[0,1]]]);
+//# sourceMappingURL=main.23f37abd.chunk.js.map
