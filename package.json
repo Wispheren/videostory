@@ -1,6 +1,8 @@
 {
   "name": "videostory",
   "version": "1.0.0",
+  "private": true,
+  "homepage": ".",
   "description": "Web optimized Video Documentary",
   "dependencies": {
     "react": "^16.13.1",
