@@ -38,8 +38,22 @@ const _insertVideoStory = config => {
     config.elm.parentNode.removeChild(config.elm);
 };
 
-window.insertVideoStory = window.insertVideoStory || _insertVideoStory;
+let isAdmin = !!window.document.body.getAttribute('data-admin');
 
-if (window.pendingVideoStory && typeof window.pendingVideoStory.forEach === 'function') {
-    window.pendingVideoStory.forEach(config => _insertVideoStory(config));
+if (isAdmin) {    
+    let html = document.body.innerHTML,
+    currentPath = `${window.location.protocol}//${window.location.host}`;
+
+    html = html.replace(/"\.?(\/static\/js\/)/g, '"' + currentPath + '$1');
+
+    while (window.document.body.firstChild) {
+        document.body.removeChild(document.body.firstChild);
+    }
+
+    console.log('html', html);
+}
+else {window.insertVideoStory = window.insertVideoStory || _insertVideoStory;
+    if (window.pendingVideoStory && typeof window.pendingVideoStory.forEach === 'function') {
+        window.pendingVideoStory.forEach(config => _insertVideoStory(config));
+    }
 }
